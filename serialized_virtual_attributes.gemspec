@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sergey.Gnuskov"]
   spec.email         = ["sergey.gnuskov@flant.ru"]
 
-  spec.summary       = %q{This gem provides ability to have several activerecord-like attributes in a single serialized column}
+  spec.summary       = %q{Ability to have several activerecord-like attributes in a single serialized column}
   spec.homepage      = ""
   spec.license       = "MIT"
 

@@ -15,7 +15,7 @@ describe SerializedVirtualAttributes do
     expect { Test.serialized_virtual_attribute :fail }.to raise_error ArgumentError
   end
 
-  it 'should raise ArgumentError if :to parameter is not serialized attribute' do
+  it 'should raise ArgumentError if :to parameter is not serialized to Hash attribute' do
     expect { Test.serialized_virtual_attribute :fail, to: :name }.to raise_error ArgumentError
   end
 

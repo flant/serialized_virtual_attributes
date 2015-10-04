@@ -1,8 +1,10 @@
 # SerializedVirtualAttributes
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/serialized_virtual_attributes`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem provides ability to have several attributes in one ActiveRecord serialized column. It might be useful for STI classes, that have some different attributes and you don't want to have separate columns for each class.
 
-TODO: Delete this and the text above, and describe your gem
+## Requirements
+
+This gem requires ActiveRecord 3.0 or higher and ruby 1.9 or higher.
 
 ## Installation
 
@@ -22,7 +24,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Just create text column, serialize it to `Hash` and define your virtual attributes using `serialized_virtual_attribute`:
+```ruby
+  class Server < ActiveRecord::Base
+    serialize :configuration, Hash
+
+    # basic attributes
+    serialized_virtual_attribute :host, :description, to: :configuration
+
+    # attribute with typecast
+    serialized_virtual_attribute :port, to: :configuration, typecast: Integer
+
+    # attributes with prefixed accessors
+    serialized_virtual_attribute :name, to: :configuration, prefix: :network
+  end
+```
+Then you are able to use accessors:
+
+```ruby
+  serv = Server.new
+  serv.host = 'localhost'
+  serv.port = 9232
+  serv.network_name = 'oxygen'
+```
+
+For ActiveRecord < 4 attr_accessible is enabled by default. You can disable it by providing `accessible: false`.
 
 ## Development
 
@@ -38,4 +64,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
