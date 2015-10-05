@@ -58,7 +58,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/serialized_virtual_attributes.
+Bug reports and pull requests are welcome on GitHub at https://github.com/flant/serialized_virtual_attributes.
 
 
 ## License
