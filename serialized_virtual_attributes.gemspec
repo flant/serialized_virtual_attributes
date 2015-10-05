@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["sergey.gnuskov@flant.ru"]
 
   spec.summary       = %q{Ability to have several activerecord-like attributes in a single serialized column}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/flant/serialized_virtual_attributes"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
