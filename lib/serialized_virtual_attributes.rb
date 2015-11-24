@@ -12,7 +12,7 @@ module SerializedVirtualAttributes
     def serialized_virtual_attribute(*args)
       options = args.extract_options!
       to = options[:to]
-      return unless self.columns_names.include?(to.to_s)
+      return unless self.column_names.include?(to.to_s)
       
       raise ArgumentError.new("option 'to' not provided or it is not serialized to hash") if to.blank? or self.serialized_attributes[to.to_s].try(:object_class) != Hash
 
