@@ -1,5 +1,7 @@
 # SerializedVirtualAttributes
 
+## Developing is dropped in favor of [activerecord-typedstore](http://github.com/byroot/activerecord-typedstore)
+
 This gem provides ability to have several attributes in one ActiveRecord serialized column. It might be useful for STI classes, that have some different attributes and you don't want to have separate columns for each class.
 
 ## Requirements
